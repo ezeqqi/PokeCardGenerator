@@ -32,6 +32,8 @@ let getPokeData = () => {
     });
 };
 
+
+
 let generateCard = (data) => {
   console.log(data);
   const id = data.id
@@ -44,6 +46,7 @@ let generateCard = (data) => {
   const statSpecDefense = data.stats[4].base_stat;
   const statSpeed = data.stats[5].base_stat;  
   const primaryColorName = data.types[0].type.name;
+  const abilities = data.abilities.map(abilityInfo => abilityInfo.ability.name)
   let secondaryColorName
   let secondaryColor
   if(data.types.length > 1) {
@@ -53,45 +56,47 @@ let generateCard = (data) => {
 
   const primaryColor = typeColor[primaryColorName];
    
-  console.log(secondaryColor);
+  console.log(data.stats);
 
-  card.innerHTML = `
-        <p class="hp">
-          <span>HP</span>
-            ${hp}
-        </p>
-        <p class="id">
-          <span>#</span>
-            ${id}
-        </p>
-        <img src=${imgSrc} />
-        <h2 class="poke-name">${pokeName}</h2>
-        <div class="types">
-         
+  card.innerHTML = `      
+        <div class="sprite-div">
+          <img src=${imgSrc} />
+        
         </div>
-        <div class="stats">
-          <div>
-            <h3>${statAttack}</h3>
-            <p>Atk</p>
+
+        <div class="info-div">
+            <div class="fields">
+              <h3 class="id">#${id} </h3>
+              <div class="types">Types: </div>
+              <div class="possible-abilities">Abilities: </div>
+            </div>
+           
+        </div>
+                
+        <div class="competitive-div">
+          <div class="stats"> 
+            <p id="hp">HP:  </p>
+            <p id="atk">Atack:  </p>
+            <p id="def">Defense: </p>
+            <p id="spec-atk">Sp. Atk: </p>
+            <p id="spec-def">Sp. Def: </p>
+            <p id="speed">Speed:  </p>
           </div>
-          <div>
-            <h3>${statDefense}</h3>
-            <p>Def</p>
+
+          <div class="stats-value"> 
+            <p class="hp"> ${hp} </p>
+            <p class="attack"> ${statAttack} </p>
+            <p class="defense"> ${statDefense} </p>
+            <p class="special-attack"> ${statSpecAttack} </p>
+            <p class="special-defense"> ${statSpecDefense} </p>
+            <p class="speed"> ${statSpeed} </p>
           </div>
-          <div>
-            <h3>${statSpecAttack}</h3>
-            <p>Sp. Atk</p>
-          </div>
-          <div>
-            <h3>${statSpecDefense}</h3>
-            <p>Sp. Def</p>
-          </div>
-          <div>
-            <h3>${statSpeed}</h3>
-            <p>Speed</p>
-          </div>
+             
         </div>
   `;
+  
+  appendInfo(pokeName)
+  appendAbility(abilities)
   appendTypes(data.types);
   styleCard(primaryColor);
   styleSecondColor(secondaryColorName, secondaryColor);
@@ -105,7 +110,7 @@ let appendTypes = (types) => {
   });
 };
 let styleCard = color => {
-  card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
+  //card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
   card.querySelectorAll(".types span").forEach((typeColor) => {
     typeColor.style.backgroundColor = color;
   });
@@ -113,7 +118,31 @@ let styleCard = color => {
  let styleSecondColor = (colorname, color) => {
   const div = document.getElementById(`${colorname}`)
   div.style.backgroundColor = color
+}
+let appendInfo = data => {
+  const spanName = document.createElement("SPAN");
+  spanName.textContent = data;
+  document.querySelector(".id").appendChild(spanName)
+}
+let appendAbility = abilities => {
+  abilities.forEach(ability => {
+    let span = document.createElement("SPAN");
+    span.id = ability
+    span.textContent = ability;
+    document.querySelector(".possible-abilities").appendChild(span)
+  });
+}
 
+let createButton = (stats) => {
+  stats.forEach(stat => {
+    let span = document.createElement("div");
+    span.className = "progress-bar";
+    span.role = "progress-bar"
+    span.ariaValueMax = 255
+    span.ariaValueMin = 0
+    span.ariaValueNow = stat.base_stat;
+    document.querySelector(`.${stat.name}`).appendChild(span)
+  })
 }
 
 btn.addEventListener("click", getPokeData);

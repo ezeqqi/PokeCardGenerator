@@ -8,58 +8,62 @@ body {
   background-color: #eff3ff;
 }
 .container {
-  width: 350px;
+  width: 550px;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
 }
 #card {
+  max-height: 280px;
   position: relative;
   width: 100%;
   padding: 30px 20px;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
+
 #card img {
   display: block;
-  width: 180px;
-  max-height: 200px;
+  width: 130px;
+  max-height: 130px;
   position: relative;
   margin: 20px auto;
+  right: 400px;
+  bottom: 40px;
+}
+.info-div {
+  text-align: center; 
+  display: block;
+  position: relative;
+  bottom: 150px;
+  right: 200px;
 }
 .id {
+  bottom: 30px;
   position: relative;
-  bottom: 40px;
-  width: 80px;
-  background-color: #101010;
-  color: #ffffff;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 30px;
-  margin-right: auto;
-  font-weight: 400;
-}
+  color: #000;
+ }
 .hp {
+  position: relative;
   width: 80px;
-  background-color: #ffffff;
-  text-align: center;
-  padding: 8px 0;
-  border-radius: 30px;
-  margin-left: auto;
-  font-weight: 400;
 }
-.poke-name {
-  text-align: center;
-  font-weight: 600;
+.possible-abilities span{
+  justify-content: right;
+  display: block;
 }
+.competitive-div {
+  position: relative;
+  left: 100px;
+  bottom: 60px;
+}
+
 .types {
-  display: flex;
+  display:block;
   justify-content: space-around;
   margin: 20px 0 40px 0;
 }
-.id span
-.hp span,
+
 .types span {
   font-size: 12px;
   letter-spacing: 0.4px;
@@ -70,14 +74,28 @@ body {
   border-radius: 20px;
   color: #ffffff;
 }
+
 .stats {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-align: center;
+  bottom: 100px;
+  left: 500px;
+  position: absolute;
+  display: inline;
+  text-align: right;
+  justify-content: end;
 }
 .stats p {
-  color: #404060;
+  color: #000;
+}
+.stats-value {
+  bottom: 100px;
+  left: 620px;
+  position: absolute;
+  display: inline;
+  text-align: center;
+  justify-content: end;
+}
+.stats p {
+  color: #000;
 }
 #btn {
   display: block;
