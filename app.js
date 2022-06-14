@@ -21,6 +21,11 @@ const typeColor = {
 const url = " https://pokeapi.co/api/v2/pokemon/";
 const card = document.getElementById("card");
 const btn = document.getElementById("btn");
+const btnRG = document.getElementById("RG")
+const btnGS = document.getElementById("GS")
+const rbe = document.getElementById("RB")
+const btnDP = document.getElementById("DP")
+const btnBW = document.getElementById("BW")
 
 let getPokeData = () => {
     let id = Math.floor(Math.random() * 251) + 1;
@@ -38,7 +43,7 @@ let generateCard = (data) => {
   console.log(data);
   const id = data.id
   const hp = data.stats[0].base_stat;
-  const imgSrc = `https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
+  let imgSrc = `https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
   const pokeName = data.name[0].toUpperCase() + data.name.slice(1);
   const statAttack = data.stats[1].base_stat;
   const statDefense = data.stats[2].base_stat;
@@ -59,14 +64,14 @@ let generateCard = (data) => {
   console.log(data.stats);
 
   card.innerHTML = `      
-        <div class="sprite-div">
-          <img src=${imgSrc} />
-        
+        <div class="sprite-div" >
+          <img src=${imgSrc} id="imagem"/>
         </div>
-
+      
         <div class="info-div">
             <div class="fields">
-              <h3 class="id">#${id} </h3>
+              <h3 class="id" id="identidade">${id} </h3>
+              <h3 class="name"></h3>
               <div class="types">Types: </div>
               <div class="possible-abilities">Abilities: </div>
             </div>
@@ -94,7 +99,6 @@ let generateCard = (data) => {
              
         </div>
   `;
-  
   appendInfo(pokeName)
   appendAbility(abilities)
   appendTypes(data.types);
@@ -122,7 +126,7 @@ let styleCard = color => {
 let appendInfo = data => {
   const spanName = document.createElement("SPAN");
   spanName.textContent = data;
-  document.querySelector(".id").appendChild(spanName)
+  document.querySelector(".name").appendChild(spanName)
 }
 let appendAbility = abilities => {
   abilities.forEach(ability => {
@@ -131,6 +135,32 @@ let appendAbility = abilities => {
     span.textContent = ability;
     document.querySelector(".possible-abilities").appendChild(span)
   });
+}
+
+let changeImgYellow = () => {
+  let id = document.getElementById("identidade").innerText
+  let img = document.getElementById("imagem")  
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-i/yellow/${id}.png`
+}
+let changeImgCrystal = () => {
+  let id = document.getElementById("identidade").innerText
+  let img = document.getElementById("imagem")  
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-ii/crystal/${id}.png`
+}
+let changeImgEmerald = () => {
+  let id = document.getElementById("identidade").innerText
+  let img = document.getElementById("imagem")  
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iii/emerald/${id}.png`
+}
+let changeImgPlatinum = () => {
+  let id = document.getElementById("identidade").innerText
+  let img = document.getElementById("imagem")  
+  img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/platinum/${id}.png`
+}
+let changeImgBlack = () => {
+  let id = document.getElementById("identidade").innerText
+  let img = document.getElementById("imagem")  
+  img.src = `https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
 }
 
 let createButton = (stats) => {
@@ -145,5 +175,10 @@ let createButton = (stats) => {
   })
 }
 
+btnBW.addEventListener("click", changeImgBlack)
+btnDP.addEventListener("click", changeImgPlatinum)
+rbe.addEventListener("click", changeImgEmerald)
+btnGS.addEventListener("click", changeImgCrystal)
+btnRG.addEventListener("click", changeImgYellow)
 btn.addEventListener("click", getPokeData);
 window.addEventListener("load", getPokeData);

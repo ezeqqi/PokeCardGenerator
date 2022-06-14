@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex box no grau</title>
+    <link rel="stylesheet" href="flexbox.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="info sprites">
+                <img src="https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif">
+                <div class="group-button">
+                    <button id="RG"> I </button>
+                    <button id="GS"> II </button>
+                    <button id="RB"> III </button>
+                    <button id="DP"> IV </button>
+                    <button id="BW"> V </button>
+                </div>
+            </div>
+            <div class="info types">
+                <div class="fields">
+                    <h4 class="id" id="identidade">150 </h2>
+                    <h4 class="name">Mewtwo</h4>
+                    <div class="types">Types: 
+                        <p>Psychic</p>
+                        <p>Dragon</p>
+                    </div>
+                    <div class="possible-abilities">Abilities:
+                        <p>Pressure</p>
+                        <p>Unnerve</p>
+                        <p>Clear Body</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info stats">
+                <div class="atributes-names"> 
+                    <p id="hp">HP:  </p>
+                    <p id="atk">Atack:  </p>
+                    <p id="def">Defense: </p>
+                    <p id="spec-atk">Sp. Atk: </p>
+                    <p id="spec-def">Sp. Def: </p>
+                    <p id="speed">Speed:  </p>
+                </div>
+
+                <div class="value"> 
+                    <p class="hp"> ${hp} </p>
+                    <p class="attack"> ${statAttack} </p>
+                    <p class="defense"> ${statDefense} </p>
+                    <p class="special-attack"> ${statSpecAttack} </p>
+                    <p class="special-defense"> ${statSpecDefense} </p>
+                    <p class="speed"> ${statSpeed} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

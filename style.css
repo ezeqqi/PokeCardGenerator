@@ -21,47 +21,40 @@ body {
   padding: 30px 20px;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
+  display: flexbox;
 }
-
-#card img {
+.goup-button {
   display: block;
-  width: 130px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 500px;
+}
+#card img {
+  width: 12%;
   max-height: 130px;
-  position: relative;
   margin: 20px auto;
-  right: 400px;
-  bottom: 40px;
+  justify-content: flex-start;
+  align-items: baseline;
+  
+}
+.btn-group {
+  background-color: rgb(77, 67, 209);
+  border: 2px;
 }
 .info-div {
-  text-align: center; 
-  display: block;
+  display: inline-block;
   position: relative;
-  bottom: 150px;
-  right: 200px;
+  left: 300px;
+  align-items: center;
+
 }
 .id {
-  bottom: 30px;
-  position: relative;
   color: #000;
- }
-.hp {
-  position: relative;
-  width: 80px;
 }
-.possible-abilities span{
-  justify-content: right;
-  display: block;
-}
-.competitive-div {
-  position: relative;
-  left: 100px;
-  bottom: 60px;
-}
-
 .types {
   display:block;
   justify-content: space-around;
-  margin: 20px 0 40px 0;
 }
 
 .types span {
@@ -73,6 +66,14 @@ body {
   padding: 5px 20px;
   border-radius: 20px;
   color: #ffffff;
+}
+.possible-abilities span{
+  justify-content: right;
+  display: block;
+}
+.competitive-div {
+  position: relative;
+  display: block;
 }
 
 .stats {
