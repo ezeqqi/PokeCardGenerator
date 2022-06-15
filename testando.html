@@ -15,7 +15,11 @@
     <div class="container">
         <div class="card">
             <div class="info sprites">
-                <img src="https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif">
+                <h3>Mewtwo</h3>
+                <div class="pokeFrame">
+                    <img src="https:raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif">
+                </div>
+                
                 <div class="group-button">
                     <button id="RG"> I </button>
                     <button id="GS"> II </button>
@@ -25,18 +29,20 @@
                 </div>
             </div>
             <div class="info types">
-                <div class="fields">
-                    <h4 class="id" id="identidade">150 </h2>
-                    <h4 class="name">Mewtwo</h4>
-                    <div class="types">Types: 
-                        <p>Psychic</p>
-                        <p>Dragon</p>
-                    </div>
-                    <div class="possible-abilities">Abilities:
-                        <p>Pressure</p>
-                        <p>Unnerve</p>
-                        <p>Clear Body</p>
-                    </div>
+                <div class="type-keys"> 
+                    <p>Id: </p>
+                    <p id="type-type">Types:  </p>
+                    <p id="abilities">Abilities: </p>
+                </div>
+
+                <div class="type-values"> 
+                    <p>150</p>
+                    <p>Psychic</p>
+                    <p>Dragon</p>
+                    <p>soundproof</p>
+                    <p>filter</p>
+                    <p>technician</p>
+                    
                 </div>
             </div>
             <div class="info stats">
@@ -50,12 +56,33 @@
                 </div>
 
                 <div class="value"> 
-                    <p class="hp"> ${hp} </p>
-                    <p class="attack"> ${statAttack} </p>
-                    <p class="defense"> ${statDefense} </p>
-                    <p class="special-attack"> ${statSpecAttack} </p>
-                    <p class="special-defense"> ${statSpecDefense} </p>
-                    <p class="speed"> ${statSpeed} </p>
+                    <p class="hp">106</p>
+                    <p class="attack">110</p>
+                    <p class="defense">90</p>
+                    <p class="special-attack">154</p>
+                    <p class="special-defense">90</p>
+                    <p class="speed">130</p>
+                </div>
+                
+                <div class="value number">
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress__fill"></div>
+                    </div>
                 </div>
             </div>
         </div>

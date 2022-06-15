@@ -8,9 +8,13 @@ body {
     background-color: #eff3ff;
 }
 
+.flex {
+    display: flex;
+}
+
 .container {
     display: flex;
-    width: 550px;
+    width: 660px;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -24,18 +28,41 @@ body {
     padding: 20px 20px;
     border-radius: 10px;
     display: flex;
-    height: 280px;
-    justify-content: space-around;
+    height: 225px;
+    justify-content: space-between;
 }
 
 .sprites {
     background-color: aqua;
-    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+h3 {
+    margin: 5px;
+    font-size: x-large;
+    text-align: flex-start;
+}
+
+.pokeFrame{
+    margin: 5px;
+    max-width: 140px;
+    max-height: 140px;
+    border-color: black;
+    border-radius: 5px;
+    align-self: flex-start;
+}
+.pokeFrame >img{
+    width: 120%;
 }
 
 .group-button {
+    margin: 5px;
     display: flex;
-    justify-content: flex-end;
+    flex: 1;
+    justify-content: flex-start;
 }
 
 .group-button > button {
@@ -46,21 +73,44 @@ body {
 }
 
 .types {
-    background-color: rgb(247, 0, 255);
+    background-color: #ffeb38;
+    display: flex;
+
 }
 
-.fields {
+.type-keys {
     display: flex;
-    align-items: center;
-    align-self: center;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.type-values {
+    margin: 5px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .stats {
-    background-color: rgb(251, 255, 0);
+    background-color: rgb(255, 113, 208);
     display: flex;
-    justify-content: center
-    flex: 1;
+    justify-content: flex-end;
+}
+
+.progress {
+    width: 123px;
+    height: 12px;
+    background: #eff3ff;
+    border-radius: 5px;
+}
+
+
+.progress__fill {
+    width: 50%;
+    height: 100%;
+    background: blueviolet;
 }
 .atributes-names {
     display: flex;
