@@ -10,6 +10,7 @@ body {
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .container {
@@ -28,31 +29,28 @@ body {
     padding: 20px 20px;
     border-radius: 10px;
     display: flex;
-    height: 225px;
+    height: 250px;
     justify-content: space-between;
 }
 
 .sprites {
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+   
 }
 
 h3 {
     margin: 5px;
     font-size: x-large;
-    text-align: flex-start;
+    text-align: center;
 }
 
 .pokeFrame{
     margin: 5px;
     max-width: 140px;
     max-height: 140px;
-    border-color: black;
-    border-radius: 5px;
-    align-self: flex-start;
+    align-self: center;
 }
 .pokeFrame >img{
     width: 120%;
@@ -61,8 +59,8 @@ h3 {
 .group-button {
     margin: 5px;
     display: flex;
-    flex: 1;
-    justify-content: flex-start;
+    flex: 0;
+    align-content: flex-end;
 }
 
 .group-button > button {
@@ -73,18 +71,19 @@ h3 {
 }
 
 .types {
-    background-color: #ffeb38;
     display: flex;
-
 }
 
 .type-keys {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.type-keys > p {
+    display: flex;
+    justify-content: flex-end;
     margin: 5px;
 }
-
 .type-values {
     margin: 5px;
     display: flex;
@@ -93,8 +92,17 @@ h3 {
     justify-content: space-between;
 }
 
+.type-values > div {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-self: space-between;
+}
+
+#tipostipos{
+    position:absolute;
+    bottom: 45%;    
+}
 .stats {
-    background-color: rgb(255, 113, 208);
     display: flex;
     justify-content: flex-end;
 }
@@ -103,27 +111,29 @@ h3 {
     width: 123px;
     height: 12px;
     background: #eff3ff;
-    border-radius: 5px;
+    border-radius: 0px;
+    overflow: hidden;
 }
 
 
 .progress__fill {
-    width: 50%;
+    width: 3%;
     height: 100%;
     background: blueviolet;
+    transition: all 0.9s ease-in-out;
 }
 .atributes-names {
     display: flex;
     flex-direction: column;
     text-align: right;
     margin: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.value {
+.atribute-value {
     display: flex;
     flex-direction: column;
     text-align: left;
     margin: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
