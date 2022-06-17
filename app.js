@@ -27,7 +27,7 @@ const rbe = document.getElementById("RB")
 const btnDP = document.getElementById("DP")
 const btnBW = document.getElementById("BW")
 
-let getPokeData = () => {
+let randomPokeData = () => {
     let id = Math.floor(Math.random() * 251) + 1;
     const finalUrl = url + id;
     fetch(finalUrl)
@@ -36,8 +36,6 @@ let getPokeData = () => {
       generateCard(data);
     });
 };
-
-
 
 let generateCard = (data) => {
   console.log(data);
@@ -180,5 +178,5 @@ btnDP.addEventListener("click", changeImgPlatinum)
 rbe.addEventListener("click", changeImgEmerald)
 btnGS.addEventListener("click", changeImgCrystal)
 btnRG.addEventListener("click", changeImgYellow)
-btn.addEventListener("click", getPokeData);
-window.addEventListener("load", getPokeData);
+btn.addEventListener("click", randomPokeData);
+window.addEventListener("load", randomPokeData);
